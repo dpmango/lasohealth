@@ -4,8 +4,11 @@
 a
   color: inherit
   text-decoration: none
+  transition: color $transitionSpeed $ease
   &:hover, &:focus, &:visited
     text-decoration: none
+  &:hover
+    color: $colorRed
 
 ul
   list-style: none
@@ -16,12 +19,12 @@ ul
 body, html
   background: white
   color: $fontColor
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-family: 'Source Sans Pro', 'Roboto', Helvetica, Arial, sans-serif
   font-size: 16px
   max-width: 100%
   overflow-x: hidden
-  // -webkit-font-smoothing: antialiased
-  // -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 .container
   max-width: 1200px

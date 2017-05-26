@@ -1,15 +1,35 @@
 // FOOTER::START
 footer.footer
-  .container
-    .row
-      .col-sm-12
+  .footer__wrapper
+    .footer__copy
+      img(src='images/logo-footer.png' srcset='images/logo-footer@2x.png 2x')
+      span LasoHealth Inc. <br> © 2017 All rights reserved
+    .footer__contact
+      span 77 Main Street, City road, NY
+      span Main Line : 2105555555
+      span 
+        a(href='#') licensing@lasohealthusa.com
+    .footer__menu
+      a(href='#') How to Book
+      a(href='#') Contact us
+      a(href='#') Privacy policy
+      a(href='#') Terms & conditions
+    .footer__socials
+      .footer__socials__head Stay in touch
+      .footer__socials__icons
+        a(href='#')
+          i.icon.icon-social-tw
+        a(href='#')
+          i.icon.icon-social-linkedin
+        a(href='#')
+          i.icon.icon-social-facebook
 
 // SCRIPTS
 
 //build:js js/scripts.min.js
 script(src="components/jquery/dist/jquery.min.js")
 script(src="components/magnific-popup/dist/jquery.magnific-popup.min.js")
-script(src="components/owl.carousel/dist/owl.carousel.min.js")
+script(src="components/slick-carousel/slick/slick.min.js")
 script(src="js/libs/jquery.maskedinput.min.js")
 script(src="js/main.js")
 //endbuild

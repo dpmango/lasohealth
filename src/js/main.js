@@ -1,9 +1,9 @@
 'use strict';
 
 $(document).ready(function () {
-  var _this = this;
 
   var _window = $(window);
+  var _document = $(document);
 
   // Prevent # behavior
   $('[href="#"]').click(function (e) {
@@ -11,42 +11,80 @@ $(document).ready(function () {
   });
 
   // Smoth scroll
-  $('a[href^="#section"]').click(function () {
-    var el = $(_this).attr('href');
+  $('a[href^="#section"]').click(function (e) {
+    var el = $(this).attr('href');
     $('body, html').animate({
       scrollTop: $(el).offset().top }, 1000);
     return false;
   });
 
-  // owl
-  $('#owlFirst').owlCarousel({
-    loop: true,
-    nav: true,
-    margin: 0,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      1000: {
-        items: 1
+  // HERO FOCUS
+  $('.hero__searchbar__input input').focusin(function () {
+    $(this).parent().addClass('focused');
+  });
+
+  $('.hero__searchbar__input input').focusout(function () {
+    $(this).parent().removeClass('focused');
+  });
+
+  // CAROUSELS
+
+  $('.trending__wrapper').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
+
+  $('.testimonials__slider').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1
+  });
+
+  $('.testimonials__slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    $('.testimonials__nav a').each(function (i, val) {
+      if ($(val).data('slide') == nextSlide) {
+        $(val).addClass('active');
+      } else {
+        $(val).removeClass('active');
       }
-    }
+    });
+  });
+
+  $('.testimonials__nav a').on('click', function () {
+    var selectedSlide = $(this).data('slide');
+
+    $('.testimonials__slider').slick('slickGoTo', selectedSlide);
   });
 
   // Magnific Popup
+  var startWindowScroll = 0;
   $('.popup-with-zoom-anim').magnificPopup({
     type: 'inline',
-    fixedContentPos: false,
+    fixedContentPos: true,
     fixedBgPos: true,
     overflowY: 'auto',
     closeBtnInside: true,
     preloader: false,
     midClick: true,
     removalDelay: 300,
-    mainClass: 'my-mfp-zoom-in'
+    mainClass: 'my-mfp-zoom-in',
+    callbacks: {
+      beforeOpen: function beforeOpen() {
+        startWindowScroll = _window.scrollTop();
+        $('html').addClass('mfp-helper');
+      },
+      close: function close() {
+        $('html').removeClass('mfp-helper');
+        _window.scrollTop(startWindowScroll);
+      }
+    }
   });
 
   $('.popup-with-move-anim').magnificPopup({

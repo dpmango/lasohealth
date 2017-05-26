@@ -1,3 +1,297 @@
 // INDEX PAGE
 .hero
-  opacity: 1
+  position: relative
+  padding-top: 150px
+  color: white
+  overflow: hidden
+  &::after
+    display: block
+    content: ' '
+    position: absolute 0 0 0 0
+    z-index: 1
+    background: url('../images/heroBg.png')
+  &__wrapper
+    position: relative
+    z-index: 2
+    display: flex
+    text-align: center
+    align-items: center
+    justify-content: center
+    flex-direction: column
+  &__title
+    font-family: 'Montserrat', sans-serif
+    font-size: 50px
+    font-weight: 600
+    letter-spacing: -.95px
+    text-shadow: 0px 8px 20px color(black a(15%))
+  &__searchbar
+    max-width: 670px
+    margin-top: 50px
+    font-size: 18px
+    color: $grayColor
+    &__group
+      display: flex
+      height: 70px
+      align-items: stretch
+      margin-bottom: 120px
+      border-radius: 5px
+      background: white
+      box-shadow: 0px 10px 20px color(black a(15%))
+      border: 1px solid $borderColor
+    &__input
+      flex: 0 1 auto
+      display: flex
+      align-items: center
+      position: relative
+      transition: all $transitionSpeed $ease
+      &.focused
+        background: $lightBg
+        input
+          background: $lightBg
+        .icon
+          color: $colorGreen
+      input
+        display: block
+        width: 100%
+        -webkit-apperance: none
+        background: white
+        border: 0
+        box-shadow: 0
+        padding: 20px 25px 20px 30px
+        transition: all $transitionSpeed $ease
+        &:focus
+          outline: none
+      .icon
+        font-size: 19px
+        color: color(#6C7A89 a(50%))
+        margin-right: 25px
+        transition: all $transitionSpeed $ease
+      &--issue
+        flex: 0 1 60%
+      &--location
+        flex: 0 1 40%
+        border-left: 1px solid $borderColor
+    button[type='submit']
+      flex: 0 0 80px
+      border: 0
+      background: $colorRed
+      font-size: 27px
+      color: white
+      width: 80px
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+      cursor: pointer
+      transition: all $transitionSpeed $ease
+      &:hover
+        background: $colorGreen
+
+
+// TRENDING
+.trending
+  padding-top: 70px
+  padding-bottom: 135px
+  &__wrapper
+    margin-top: 70px
+    display: flex
+    justify-content: center
+  &__card
+    display: block
+    position: relative
+    overflow: hidden
+    border-radius: 8px
+    width: 300px
+    height: 200px
+    margin-right: 15px
+    margin-left: 15px
+    transition: all $transitionSpeed $ease
+    &__image
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      z-index: 1
+      &::after
+        display: block
+        content: ''
+        position: absolute 0 0 0 0
+        z-index: 2
+        background: linear-gradient(45deg, #6C7A89, #32313A)
+        opacity: .9
+        transition: all $transitionSpeed $ease
+    &__content
+      position: relative
+      display: flex
+      flex-direction: column
+      text-align: center
+      justify-content: center
+      align-items: center
+      height: 200px
+      z-index: 3
+      color: white
+    &__name
+      font-size: 22px
+      font-weight: 600
+      transition: all $transitionSpeed $ease
+    &__action
+      position: absolute
+      left: 0
+      top: 50%
+      width: 100%
+      opacity: 0
+      transform: translate3d(0%, 0%, 0)
+      margin-top: 20px
+      font-size: 14px
+      transition: all $transitionSpeed $ease
+    &:hover
+      box-shadow: 0px 5px 10px color(black a(15%))
+      .trending__card__image
+        &::after
+          opacity: 1
+          background: linear-gradient(45deg, #FF5B61, #FD8160)
+
+      .trending__card__name
+        transform: translate3d(0%, -10px, 0)
+      .trending__card__action
+        opacity: 1
+        transform: translate3d(0%, -50%, 0)
+
+
+// METRICS
+.metrics
+  background: #F4F5F7
+  padding: 65px 0
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    max-width: 1200px
+    padding-left: 20px
+    padding-right: 20px
+    margin-left: auto
+    margin-right: auto
+  &__card
+    flex: 0 1 25%
+    margin-left: 15px
+    margin-right: 15px
+    background: white
+    border-radius: 8px
+    text-align: center
+    padding: 30px 15px
+    &__number
+      font-family: 'Montserrat'
+      color: $colorRed
+      font-weight: 600
+      font-size: 42px
+      margin-bottom: 10px
+    &__text
+      font-size: 18px
+      color: $grayColor
+
+
+// ABOUT
+.about
+  padding-top: 110px
+  padding-bottom: 100px
+  &__wrapper
+    max-width: 780px
+    margin-left: auto
+    margin-right: auto
+    p
+      font-size: 20px
+      line-height: 1.5
+      margin-bottom: 1.5em
+
+
+// VIDEO
+.video
+  position: relative
+  color: white
+  text-align: center
+  overflow: hidden
+  .icon
+    color: white
+  .heading
+    padding-top: 130px
+  &__image
+    height: 500px
+    position: relative
+    z-index: 1
+    img
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      min-width: 100%
+      min-height: 100%
+      height: auto
+      width: auto
+  &__iframe
+    opacity: 0
+    position: absolute 0 0 0 0
+    z-index: 3
+    pointer-events: none
+
+  &__content
+    position: absolute
+    left: 50%
+    top: 50%
+    width: 100%
+    transform: translate(-50%, -70%)
+    z-index: 2
+    .icon
+      font-size: 80px
+      cursor: pointer
+      transition: all $transitionSpeed $ease
+      &:hover
+        color: color(white a(70%))
+
+
+// TESTIMONIALS
+.testimonials
+  padding-top: 90px
+  padding-bottom: 100px
+  max-width: 780px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 20px
+  padding-right: 20px
+  .icon-quote
+    color: #ECF0F1
+    font-size: 70px
+    margin-bottom: 35px
+  &__slide
+    opacity: 1
+    text-align: center
+  &__content
+    font-size: 22px
+    line-height: 1.45
+  &__author
+    font-size: 18px
+    margin-top: 40px
+    color: $grayColor
+  &__nav
+    margin-top: 35px
+    display: flex
+    justify-content: center
+    a
+      opacity: .35
+      transition: all $transitionSpeed $ease
+      margin-right: 17px
+      margin-left: 17px
+      &.active
+        opacity: 1
+        &:hover
+          opacity: 1
+      &:hover
+        opacity: .7
+
+
+// CTA
+.cta
+  background: #F4F5F7
+  padding-top: 100px
+  padding-bottom: 80px
+  p
+    font-size: 20px
+    line-height: 1.5
+    margin-bottom: 40px
+    

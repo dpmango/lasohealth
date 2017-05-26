@@ -5,14 +5,116 @@
 .header
   position: absolute
   left: 0
+  right: 0
   width: 100%
-  height: 50px
+  z-index: 9
+  background: #F8F9FA
+  box-shadow: 0 3px 8px color(black a(15%))
   &__wrapper
     display: flex
     justify-content: space-between
+    align-items: stretch
+    height: 80px
+    max-width: 1200px
+    padding-left: 20px
+    padding-right: 20px
+  &__logo
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+
+  &__user
+    margin-left: auto
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    font-size: 18px
+    color: $grayColor
+    padding-left: 40px
+    border-left: 1px solid $borderColor
+    a
+      display: inline-block
+      &::after
+        display: inline-block
+        content: '|'
+        margin: 0 10px
+      &:last-child
+        &::after
+          display: none
+      &:hover
+        &::after
+          color: $grayColor
+
 
 
 
 // FOOTER
 .footer
-  flex: 0
+  background: #32313A
+  color: white
+  font-size: 14px
+  padding-top: 50px
+  padding-bottom: 50px
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    max-width: 1200px
+    margin-left: auto
+    margin-right: auto
+    padding-left: 20px
+    padding-right: 20px
+  &__copy
+    font-size: 13px
+    color: color(white a(70%))
+    display: flex
+    align-items: flex-start
+    img
+      flex: 0 0 36px
+    span
+      display: inline-block
+      margin-left: 20px
+
+  &__contact
+    span
+      display: block
+      margin-bottom: 10px
+  &__menu
+    a
+      display: block
+      margin-bottom: 10px
+      transition: color $transitionSpeed $ease
+      &:hover
+        color: $colorRed
+  &__socials
+    &__head
+      font-family: 'Montserrat', sans-serif
+      font-size: 16px
+      font-weight: 600
+      margin-bottom: 15px
+    &__icons
+      display: flex
+      align-items: center
+      a
+        display: inline-block
+        margin-right: 35px
+      .icon
+        color: white
+        font-size: 27px
+        transition: all $transitionSpeed $ease
+        &:hover
+          &.icon-social-tw
+            color: #00aced
+          &.icon-social-linkedin
+            color: #007bb6
+          &.icon-social-facebook
+            color: #3b5998
+
+
+// HEADING
+.heading
+  font-family: 'Montserrat', sans-serif
+  font-size: 38px
+  font-weight: 600
+  margin-bottom: 35px
+.subheading
+  font-size: 20px

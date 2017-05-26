@@ -4,34 +4,63 @@ $(document).ready(function(){
   const _document = $(document);
 
  	// Prevent # behavior
-	$('[href="#"]').click((e) => {
+	$('[href="#"]').click(function(e) {
 		e.preventDefault();
 	});
 
 	// Smoth scroll
-	$('a[href^="#section"]').click(() => {
+	$('a[href^="#section"]').click(function(e) {
         var el = $(this).attr('href');
         $('body, html').animate({
             scrollTop: $(el).offset().top}, 1000);
         return false;
 	});
 
-  // owl
-  $('#owlFirst').owlCarousel({
-    loop: true,
-    nav: true,
-    margin: 0,
-    responsive: {
-      0:{
-        items: 1,
-      },
-      600:{
-        items: 1,
-      },
-      1000:{
-        items: 1,
+  // HERO FOCUS
+  $('.hero__searchbar__input input').focusin(function(){
+    $(this).parent().addClass('focused');
+  });
+
+  $('.hero__searchbar__input input').focusout(function(){
+    $(this).parent().removeClass('focused');
+  });
+
+  // CAROUSELS
+
+  $('.trending__wrapper').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
+
+
+  $('.testimonials__slider').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1
+  });
+
+
+  $('.testimonials__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $('.testimonials__nav a').each(function(i,val){
+      if ( $(val).data('slide') == nextSlide ){
+        $(val).addClass('active');
+      } else {
+        $(val).removeClass('active');
       }
-    }
+    });
+  });
+
+  $('.testimonials__nav a').on('click', function(){
+    var selectedSlide = $(this).data('slide');
+
+    $('.testimonials__slider').slick('slickGoTo', selectedSlide);
   });
 
   // Magnific Popup

@@ -10,3 +10,17 @@ button
   transition: all $transitionSpeed ease-in-out
   &:focus, &:active
     outline: none
+  &--primary
+    font-family: 'Montserrat', sans-serif
+    font-weight: 600
+    background: $colorRed
+    color: white
+    border-radius: 6px
+    padding: 10px 30px
+    &:hover
+      background: $colorGreen
+      color: white
+    &.btn--huge
+      padding: 15px 30px
+      min-width: 300px
+      font-size: 20px

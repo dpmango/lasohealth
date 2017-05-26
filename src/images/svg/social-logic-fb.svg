@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-social-logic-fb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login-overlay" transform="translate(-526.000000, -629.000000)" fill="#3C5B97">
+            <g id="modal">
+                <g id="socials" transform="translate(506.000000, 619.000000)">
+                    <g id="btn-copy-2">
+                        <g id="ico-social-logic-fb" transform="translate(20.000000, 10.000000)">
+                            <g id="Capa_1">
+                                <path d="M0,15.0317857 C0,22.4466071 5.39678571,28.5873214 12.4728571,29.7764286 L12.4728571,18.1548214 L8.86178571,18.1548214 L8.86178571,13.9726786 L12.4728571,13.9726786 L12.4728571,10.8889286 C12.4728571,7.31089286 14.6582143,5.36107143 17.8505357,5.36107143 C19.3794643,5.36107143 20.6933929,5.475 21.0748214,5.52517857 L21.0748214,9.26517857 L18.8607143,9.26625 C17.125,9.26625 16.7903571,10.0908929 16.7903571,11.3014286 L16.7903571,13.9705357 L20.9319643,13.9705357 L20.3917857,18.1526786 L16.7903571,18.1526786 L16.7903571,29.8764286 C24.1967857,28.975 29.93875,22.6778571 29.93875,15.0275 C29.93875,6.76446429 23.2366071,0.0623214286 14.9694643,0.0623214286 C6.70214286,0.0623214286 0,6.76446429 0,15.0317857 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

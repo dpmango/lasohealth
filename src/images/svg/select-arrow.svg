@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>select-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.501302083">
+        <g id="Search-results-Map" transform="translate(-1354.000000, -331.000000)" fill-rule="nonzero" fill="#6C7A89">
+            <g id="filter-head" transform="translate(515.000000, 310.000000)">
+                <g id="sorting" transform="translate(598.000000, 0.000000)">
+                    <g id="select-arrow" transform="translate(241.000000, 21.000000)">
+                        <path d="M13.5184803,0.769970831 L13.022295,0.279622032 C12.7486131,0.00885480809 12.3038297,0.00885480809 12.0296114,0.279622032 L6.86863135,5.3148943 L1.69433146,0.203042295 C1.42015788,-0.067680765 0.975597991,-0.067680765 0.701647903,0.203042295 L0.205462566,0.693302767 C-0.068487522,0.964158318 -0.068487522,1.40287983 0.205462566,1.67377955 L6.36609899,7.76080869 C6.64004908,8.03179673 7.08425139,8.03179673 7.35851436,7.76080869 L13.5184803,1.75031512 C13.7931009,1.47959206 13.7931009,1.04069389 13.5184803,0.769970831 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

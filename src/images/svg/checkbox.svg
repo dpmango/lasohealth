@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="8px" viewBox="0 0 9 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>checkbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Search-results" transform="translate(-238.000000, -613.000000)" fill="#59C8C2">
+            <g id="checkbox-row" transform="translate(217.000000, 597.000000)">
+                <path d="M28.041832,16.3795984 L23.9866199,20.9051245 L22.9726737,19.7735904 C22.5246852,19.2735904 21.7986362,19.2735904 21.3506476,19.7735904 C20.9026591,20.2735904 20.9026591,21.0839839 21.3506476,21.5836787 L23.17546,23.620241 C23.6234486,24.120241 24.3494976,24.120241 24.7974861,23.620241 L29.6638434,18.189992 C30.1118613,17.689992 30.1118613,16.8795984 29.6638581,16.3795984 C29.2158695,15.8795984 28.4898206,15.8795984 28.041832,16.3795984 Z" id="checkbox"></path>
+            </g>
+        </g>
+    </g>
+</svg>

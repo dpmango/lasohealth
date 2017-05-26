@@ -7,39 +7,148 @@ doctype html
   body
     include shared/header.pug
 
-    // SECTION::START
-    section.section
-
-    // OWL::START
-    section.owl
-      .container
-        .row
-          .col-sm-12
-            .owl-carousel#owlFirst
-              img(src="http://placehold.it/1200x300")
-              img(src="http://placehold.it/1200x300")
-              img(src="http://placehold.it/1200x300")
-
-    // MAGNIFIC::START
-    section.magnific
-      .container
-        .row
-          .col-sm-12
-            .popup-gallery
-              a(href='http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg', title='The Cleaner')
-                img(src='http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg', width='75', height='75')
-              a(href='http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg', title='Winter Dance')
-                img(src='http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg', width='75', height='75')
-              a(href='http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg', title='The Uninvited Guest')
-                img(src='http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg', width='75', height='75')
-              a(href='http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg', title='Oh no, not again!')
-                img(src='http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg', width='75', height='75')
-              a(href='http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg', title='Swan Lake')
-                img(src='http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg', width='75', height='75')
-              a(href='http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg', title='The Shake')
-                img(src='http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg', width='75', height='75')
-              a(href='http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg', title="Who's that, mommy?")
-                img(src='http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg', width='75', height='75')
-
-
+    // HERO :: START
+    .hero
+      .hero__wrapper
+        .hero__title Medical Appointments Done Right!
+        form(action='').hero__searchbar
+          .hero__searchbar__group
+            .hero__searchbar__input.hero__searchbar__input--issue
+              input(type='text' placeholder='Type in symptom')
+              i.icon.icon-tool
+            .hero__searchbar__input.hero__searchbar__input--location
+              input(type='text' placeholder='Location')
+              i.icon.icon-location
+            button(type='submit')
+              i.icon.icon-search-big
+    
+    // TRENDING :: START
+    .trending
+      .text-center
+        .heading Trending Appointments
+        .subheading Find thousands of medical appointments to book right now!
+      
+      .trending__wrapper
+        // card
+        a(href='#').trending__card
+          .trending__card__image
+            img(src='images/trending-picture-1.png' srcset='images/trending-picture-1@2x.png 2x')
+          .trending__card__content
+            .trending__card__name Dental care
+            .trending__card__action Discover apointments now
+        // card
+        a(href='#').trending__card
+          .trending__card__image
+            img(src='images/trending-picture-2.png' srcset='images/trending-picture-1@2x.png 2x')
+          .trending__card__content
+            .trending__card__name Blood presure
+            .trending__card__action Discover apointments now
+        // card
+        a(href='#').trending__card
+          .trending__card__image
+            img(src='images/trending-picture-1.png' srcset='images/trending-picture-1@2x.png 2x')
+          .trending__card__content
+            .trending__card__name Cardiology
+            .trending__card__action Discover apointments now              
+        // card
+        a(href='#').trending__card
+          .trending__card__image
+            img(src='images/trending-picture-1.png' srcset='images/trending-picture-1@2x.png 2x')
+          .trending__card__content
+            .trending__card__name Dental care
+            .trending__card__action Discover apointments now
+        // card
+        a(href='#').trending__card
+          .trending__card__image
+            img(src='images/trending-picture-2.png' srcset='images/trending-picture-1@2x.png 2x')
+          .trending__card__content
+            .trending__card__name Blood presure
+            .trending__card__action Discover apointments now
+        // card
+        a(href='#').trending__card
+          .trending__card__image
+            img(src='images/trending-picture-1.png' srcset='images/trending-picture-1@2x.png 2x')
+          .trending__card__content
+            .trending__card__name Cardiology
+            .trending__card__action Discover apointments now              
+    
+    
+    // METRICS :: START
+    .metrics
+      .metrics__wrapper
+        .metrics__card
+          .metrics__card__number 174
+          .metrics__card__text Appointments Last Month
+        .metrics__card
+          .metrics__card__number 52
+          .metrics__card__text Medical facilities involved
+        .metrics__card
+          .metrics__card__number 400+
+          .metrics__card__text Monthly Users
+        .metrics__card
+          .metrics__card__number 3
+          .metrics__card__text Months since start
+          
+    // ABOUT :: START
+    .about
+      .text-center
+        .heading About LasoHealth
+        .about__wrapper
+          p LasoHealth is a transparent appointment booking platiform that automates all booking from submitting your personal information, credit reports and offers with online payments. 
+          p It now has a staff complement of 35 occupying modern offices, within Albion House, in the centre of the City of Chester and also at Nantwich Court, Hospital Street, Nantwich. Since its inception, the company has strategically expanded so that it now provides the same respected level of advice across the whole spectrum of commercial property, including industrial, offices, in and out of town retail, leisure and land.
+    
+    // VIDEO
+    .video
+      .video__iframe
+        iframe(width='560', height='315', src='https://www.youtube.com/embed/NCfWqLFqG24', frameborder='0', allowfullscreen='')
+      .video__image
+        img(src='images/booking-video.png' srcset='images/booking-video@2x.png 2x')
+      .video__content
+        .heading BOOKING & SCHEDULING VIDEO
+        i.icon.icon-video-play
+    
+    // TESTIMONIALS :: START
+    .testimonials
+      .text-center
+        i.icon.icon-quote
+      .testimonials__slider
+        // slide
+        .testimonials__slide
+          .testimonials__content "Thank you for making it painless, pleasant and most of all hassle free! Your company is truly upstanding and is behind its product 100%. No matter where you go, LasoHealth is the coolest, most happening thing around! You won't regret it."
+          .testimonials__author - Julina S, LasoHealth user
+        // slide
+        .testimonials__slide
+          .testimonials__content "Thank you for making it painless, pleasant and most of all hassle free! Your company is truly upstanding and is behind its product 100%. No matter where you go, LasoHealth is the coolest, most happening thing around! You won't regret it."
+          .testimonials__author - Julina S, LasoHealth user
+        // slide
+        .testimonials__slide
+          .testimonials__content "Thank you for making it painless, pleasant and most of all hassle free! Your company is truly upstanding and is behind its product 100%. No matter where you go, LasoHealth is the coolest, most happening thing around! You won't regret it."
+          .testimonials__author - Julina S, LasoHealth user
+        // slide
+        .testimonials__slide
+          .testimonials__content "Thank you for making it painless, pleasant and most of all hassle free! Your company is truly upstanding and is behind its product 100%. No matter where you go, LasoHealth is the coolest, most happening thing around! You won't regret it."
+          .testimonials__author - Julina S, LasoHealth user
+      .testimonials__nav
+        a(href='#' data-slide='0').active
+          img(src='images/testimonials_user_1.png' srcset='images/testimonials_user_1@2x.png 2x')
+        a(href='#' data-slide='1')
+          img(src='images/testimonials_user_2.png' srcset='images/testimonials_user_2@2x.png 2x')
+        a(href='#' data-slide='2')
+          img(src='images/testimonials_user_3.png' srcset='images/testimonials_user_3@2x.png 2x')          
+        a(href='#' data-slide='3')
+          img(src='images/testimonials_user_4.png' srcset='images/testimonials_user_4@2x.png 2x')
+                    
+    
+    // CTA :: START
+    .cta
+      .text-center
+        p Now it’s time to get the best local appointment deals. <br> Join LasoHealth for free!
+        a(href='#').btn.btn--primary.btn--huge Sign Up
+        
+      
+    
+                
+        
+        
+      
     include shared/footer.pug
