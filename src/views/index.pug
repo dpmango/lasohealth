@@ -14,13 +14,18 @@ doctype html
         form(action='').hero__searchbar
           .hero__searchbar__group
             .hero__searchbar__input.hero__searchbar__input--issue
-              input(type='text' placeholder='Type in symptom')
+              input(type='text' placeholder='Symptom')
               i.icon.icon-tool
             .hero__searchbar__input.hero__searchbar__input--location
               input(type='text' placeholder='Location')
               i.icon.icon-location
             button(type='submit')
               i.icon.icon-search-big
+        
+        .hero__secondary
+          .hero__secondary__title Already have an acocunt?
+          a(href='#' data-modal='modalLogin').btn.btn--secondary Sign Up
+        
     
     // TRENDING :: START
     .trending
@@ -143,7 +148,7 @@ doctype html
     .cta
       .text-center
         p Now it’s time to get the best local appointment deals. <br> Join LasoHealth for free!
-        a(href='#').btn.btn--primary.btn--huge Sign Up
+        a(href='#' data-modal='modalSignup').btn.btn--primary.btn--huge Sign Up
         
       
     

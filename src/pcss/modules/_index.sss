@@ -57,13 +57,24 @@
         background: white
         border: 0
         box-shadow: 0
+        font-size: 18px
+        color: $grayColor
+        font-weight: 600
         padding: 20px 25px 20px 30px
         transition: all $transitionSpeed $ease
         &:focus
           outline: none
+        // &::-webkit-input-placeholder
+        //   font-weight: 400
+        // &::-moz-placeholder
+        //   font-weight: 400
+        // &:-moz-placeholder
+        //   font-weight: 400
+        // &:-ms-input-placeholder
+        //   font-weight: 400
       .icon
         font-size: 19px
-        color: color(#6C7A89 a(50%))
+        color: color($grayColor a(50%))
         margin-right: 25px
         transition: all $transitionSpeed $ease
       &--issue
@@ -85,6 +96,13 @@
       &:hover
         background: $colorGreen
 
+  &__secondary
+    margin-bottom: 40px
+    text-align: center
+    &__title
+      font-family: 'Montserrat', sans-serif
+      font-size: 18px
+      margin-bottom: 15px
 
 // TRENDING
 .trending
@@ -115,7 +133,7 @@
         content: ''
         position: absolute 0 0 0 0
         z-index: 2
-        background: linear-gradient(45deg, #6C7A89, #32313A)
+        background: linear-gradient(45deg, $grayColor, #32313A)
         opacity: .9
         transition: all $transitionSpeed $ease
     &__content
@@ -294,4 +312,3 @@
     font-size: 20px
     line-height: 1.5
     margin-bottom: 40px
-    

@@ -1,7 +1,12 @@
 $(document).ready(function(){
 
+  // GLOBAL VARIABLES
   const _window = $(window);
   const _document = $(document);
+
+  /////////
+  // C'OMMON
+  /////////
 
  	// Prevent # behavior
 	$('[href="#"]').click(function(e) {
@@ -16,6 +21,105 @@ $(document).ready(function(){
         return false;
 	});
 
+  // HEADER SEARCH FOCUS
+  // blue color on focus
+  $('.header__search__input input').focusin(function(){
+    $(this).parent().addClass('focused');
+  });
+
+  $('.header__search__input input').focusout(function(){
+    $(this).parent().removeClass('focused');
+  });
+
+  // and make it red if filed is not empty
+  $('.header__search__input input').keyup(function(){
+    if( this.value ) {
+      $(this).parent().addClass('filled');
+    } else {
+      $(this).parent().removeClass('filled');
+    }
+  });
+
+  // HEADER SCROLL
+  _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
+    var vScroll = _window.scrollTop();
+    var header = $('.header');
+    var headerHeight = header.height();
+    var heroHeight = $('.hero').outerHeight() - headerHeight;
+
+    if ( vScroll > headerHeight ){
+      header.addClass('header--transformed');
+    } else {
+      header.removeClass('header--transformed');
+    }
+
+    if ( vScroll > heroHeight ){
+      header.addClass('header--fixed');
+    } else {
+      header.removeClass('header--fixed');
+    }
+
+  });
+
+  /////////
+  // MODAL
+  ////////
+
+  $('*[data-modal]').on('click', function(){
+    // remove all active first
+    $('.modal').removeClass('opened');
+
+    // find by id
+    var target = $(this).data('modal');
+    $('#'+target).addClass('opened');
+  });
+
+  $('.modal__close').on('click', function(){
+    $(this).closest('.modal').removeClass('opened');
+  });
+
+  // INPUTS FOCUS
+  // Codedrops based - pure javascript
+  (function() {
+    // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+    if (!String.prototype.trim) {
+      (function() {
+        // Make sure we trim BOM and NBSP
+        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+        String.prototype.trim = function() {
+          return this.replace(rtrim, '');
+        };
+      })();
+    }
+
+    [].slice.call( document.querySelectorAll( '.input--dynamic input' ) ).forEach( function( inputEl ) {
+      // in case the input is already filled..
+      if( inputEl.value.trim() !== '' ) {
+        classie.add( inputEl.parentNode, 'input--focused' );
+      }
+
+      // events:
+      inputEl.addEventListener( 'focus', onInputFocus );
+      inputEl.addEventListener( 'blur', onInputBlur );
+    } );
+
+    function onInputFocus( ev ) {
+      classie.add( ev.target.parentNode, 'input--focused' );
+    }
+
+    function onInputBlur( ev ) {
+      if( ev.target.value.trim() === '' ) {
+        classie.remove( ev.target.parentNode, 'input--focused' );
+      }
+    }
+  })();
+
+
+
+  ///////////
+  // MAINPAGE
+  ///////////
+
   // HERO FOCUS
   $('.hero__searchbar__input input').focusin(function(){
     $(this).parent().addClass('focused');
@@ -28,6 +132,7 @@ $(document).ready(function(){
   // CAROUSELS
 
   $('.trending__wrapper').slick({
+    autoplay: true,
     dots: false,
     arrows: false,
     infinite: true,
@@ -62,62 +167,5 @@ $(document).ready(function(){
 
     $('.testimonials__slider').slick('slickGoTo', selectedSlide);
   });
-
-  // Magnific Popup
-  var startWindowScroll = 0;
-  $('.popup-with-zoom-anim').magnificPopup({
-    type: 'inline',
-    fixedContentPos: true,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    removalDelay: 300,
-    mainClass: 'my-mfp-zoom-in',
-    callbacks: {
-      beforeOpen: function() {
-        startWindowScroll = _window.scrollTop();
-        $('html').addClass('mfp-helper');
-      },
-      close: function() {
-        $('html').removeClass('mfp-helper');
-        _window.scrollTop(startWindowScroll);
-      }
-    }
-  });
-
-  $('.popup-with-move-anim').magnificPopup({
-    type: 'inline',
-    fixedContentPos: false,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    removalDelay: 300,
-    mainClass: 'my-mfp-slide-bottom'
-  });
-
-  $('.popup-gallery').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1]
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-		}
-	});
-
-  // Masked input
-  $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-  $("input[name='phone']").mask("9 (999) 999-9999");
-  $("#tin").mask("99-9999999");
-  $("#ssn").mask("999-99-9999");
 
 });
