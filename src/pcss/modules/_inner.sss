@@ -1,1 +1,205 @@
 // SOME INNER PAGES CONTENT
+.results
+  padding-top: 80px
+  position: relative
+  &__wrapper
+    display: flex
+    min-height: 550px
+    overflow: hidden
+    height: calc(100vh - 80px)
+  &__cards
+    flex: 0 1 500px
+    display: flex
+    flex-direction: column
+    background: $lightBg
+  &__filter
+    position: relative
+    flex: 0 0 auto
+    &.active
+      .results__filter__head
+        background: white
+      .results__filter__dropdown
+        height: auto
+
+    &__head
+      display: flex
+      justify-content: space-between
+      align-items: center
+      border-bottom: 1px solid $borderColor
+      padding: 17px 40px
+      font-size: 18px
+      color: $grayColor
+      cursor: pointer
+      transition: all $transitionSpeed $ease
+      &:hover
+        background: white
+      &__title
+        font-family: 'Montserrat', sans-serif
+        flex: 0 1 auto
+        display: flex
+        align-items: center
+        .icon
+          color: $colorGreen
+          size: 14px
+          margin-right: 10px
+        span
+          display: inline-block
+          margin-bottom: -3px
+      &__counter
+        flex: 0 0 auto
+        margin-left: auto
+        span
+          font-weight: 600
+
+    &__dropdown
+      height: 0
+      overflow: hidden
+      display: flex
+      flex-direction: column
+      justify-content: center
+      max-width: 350px
+      margin-left: auto
+      margin-right: auto
+      transition: all $transitionSpeed $ease
+    &__group
+      margin-top: 30px
+      width: 100%
+      > label
+        display: block
+        font-size: 13px
+        font-weight: 600
+        text-transform: uppercase
+        margin-bottom: 5px
+
+
+  &__card-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    overflow-y: scroll
+  &__card
+    position: relative
+    overflow: hidden
+    flex: 0 0 350px
+    background: white
+    margin-top: 20px
+    border-radius: 6px
+    border: 2px solid $borderColor
+    padding: 30px 40px
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &__author
+      margin-bottom: 25px
+      display: flex
+      align-items: center
+    &__avatar
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 50%
+      size: 40px
+      overflow: hidden
+      border: 2px solid $borderColor
+    &__author-content
+      margin-left: 15px
+    &__author-name
+      font-family: 'Montserrat', sans-serif
+      font-size: 16px
+      font-weight: 600
+      color: $grayColor
+      margin-bottom: 5px
+    &__rating
+      display: flex
+      align-items: center
+      .icon
+        font-size: 18px
+        color: $colorYellow
+        margin-right: 5px
+      span
+        font-size: 12px
+        color: color($fontColor a(70%))
+        > span
+          font-size: 15px
+          font-weight: 600
+    &__location
+      font-size: 13px
+      color: $grayColor
+      display: flex
+      align-items: flex-start
+      .icon
+        color: color($grayColor a(50%))
+        flex: 0 0 20px
+    &__location-content
+      span
+        display: block
+        margin-top: 5px
+        font-size: 12px
+        color: color($fontColor a(50%))
+    &__line
+      display: flex
+      justify-content: space-between
+      align-items: center
+      max-width: 265px
+    &__time
+      flex: 0 0 auto
+      margin-top: 20px
+      font-size: 13px
+      color: $grayColor
+      display: flex
+      align-items: flex-start
+      .icon
+        color: color($grayColor a(50%))
+        flex: 0 0 20px
+    &__time-content
+      span
+        display: block
+        font-weight: 600
+        margin-bottom: 5px
+    &__price
+      flex: 0 0 auto
+      margin-left: auto
+      font-family: 'Montserrat', sans-serif
+      font-size: 24px
+      font-weight: 600
+      color: $colorGreen
+    &__cta
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      font-size: 0
+      opacity: 0
+      transition: all $transitionSpeed $ease
+      transform: translate3d(40px,0,0)
+      &__wrapper
+        position: relative
+        height: 100%
+      .btn
+        font-size: 16px
+        font-weight: 600
+        width: 40px
+        height: 100%
+        background: $colorRed
+        color: white
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+        span
+          position: absolute
+          top: 45%
+          display: inline-block
+          transform: rotate(90deg) translate3d(0px, 100%, 0)
+    &:hover
+      flex-basis: 380px
+      border-color: $colorRed
+      .results__card__cta
+        opacity: 1
+        transform: translate3d(0,0,0)
+
+
+
+  &__map
+    flex: 0 1 calc(100% - 500px)
+    display: flex
+    flex-direction: column
+    .js-google-map
+      flex: 1

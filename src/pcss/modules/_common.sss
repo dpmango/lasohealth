@@ -9,6 +9,7 @@
   width: 100%
   z-index: 9
   background: #F8F9FA
+  border-bottom: 1px solid $borderColor
   box-shadow: 0 3px 8px color(black a(15%))
   transition: transform $transitionSpeed $ease
   &__wrapper
@@ -98,6 +99,17 @@
   &--fixed
     opacity: 1
     transform: translate3d(0, 0px, 0)
+  &--results
+    box-shadow: none
+    .header__wrapper
+      max-width: 100%
+    .header__search
+      transform: translate3d(0, 0px, 0)
+      &__input
+        input
+          color: $colorRed
+        .icon
+          color: $colorRed
 
 
 

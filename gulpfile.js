@@ -78,8 +78,8 @@ var processors = [
     sorting(),
     pixrem(),
     will_change(),
-    rgba_fallback(),
-    opacity(),
+    //rgba_fallback(),
+    //opacity(),
     pseudoel(),
     vmin(),
     flexbugs()

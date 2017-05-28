@@ -46,7 +46,7 @@ $(document).ready(function () {
   _window.scrolled(10, function () {
     // scrolled is a constructor for scroll delay listener
     var vScroll = _window.scrollTop();
-    var header = $('.header');
+    var header = $('.header').not('.header--static');
     var headerHeight = header.height();
     var heroHeight = $('.hero').outerHeight() - headerHeight;
 
@@ -164,5 +164,37 @@ $(document).ready(function () {
     var selectedSlide = $(this).data('slide');
 
     $('.testimonials__slider').slick('slickGoTo', selectedSlide);
+  });
+
+  /////////////
+  // RESULTS
+  ////////////
+
+
+  // FIlter toggle
+  $('.results__filter__head').on('click', function () {
+    $(this).closest('.results__filter').toggleClass('active');
+  });
+
+  // DATEPICKER
+  $('.js-datepicker').datepicker({
+    language: 'en',
+    range: true,
+    multipleDatesSeparator: " - "
+  });
+
+  // RANGESLIDER
+  $('.js-rangeslider').rangeslider({
+    polyfill: false,
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--horizontal',
+    verticalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
+
+    onInit: function onInit() {},
+    onSlide: function onSlide(position, value) {},
+    onSlideEnd: function onSlideEnd(position, value) {}
   });
 });

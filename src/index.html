@@ -20,7 +20,7 @@
   <header class="header">
     <div class="header__wrapper">
       <div class="header__logo"><img src="images/logo.png" srcset="images/logo@2x.png 2x"></div>
-      <form class="header__search" action="">
+      <form class="header__search" action="results.html">
         <div class="header__search__input header__search__input--issue"><i class="icon icon-tool"></i>
           <input type="text" placeholder="Symptom">
         </div>
@@ -117,7 +117,7 @@
   <div class="hero">
     <div class="hero__wrapper">
       <div class="hero__title">Medical Appointments Done Right!</div>
-      <form class="hero__searchbar" action="">
+      <form class="hero__searchbar" action="results.html">
         <div class="hero__searchbar__group">
           <div class="hero__searchbar__input hero__searchbar__input--issue">
             <input type="text" placeholder="Symptom"><i class="icon icon-tool"></i>
@@ -265,11 +265,16 @@
     </div>
   </footer>
   <!-- SCRIPTS-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh760T5WeW3SXJxUuIwZPYjcpyZL7nwfU&amp;callback=initMap" async="" defer=""></script>
   <!--build:js js/scripts.min.js-->
   <script src="components/jquery/dist/jquery.min.js"></script>
   <script src="components/slick-carousel/slick/slick.min.js"></script>
+  <script src="components/air-datepicker/dist/js/datepicker.min.js"></script>
+  <script src="components/air-datepicker/dist/js/i18n/datepicker.en.js"></script>
+  <script src="components/rangeslider.js/dist/rangeslider.min.js"></script>
   <script src="js/utilities.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
   <!--endbuild-->
 </body>

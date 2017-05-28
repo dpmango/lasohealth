@@ -1,0 +1,141 @@
+doctype html
+<!--[if IE 8]>         <html class="ie8 oldie"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 oldie"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class=""> <!--<![endif]-->
+  include shared/head.pug
+
+  body
+    include shared/header-results.pug
+    
+    .results
+      .results__wrapper
+        .results__cards
+          .results__filter
+            .results__filter__head 
+              .results__filter__head__title
+                i.icon.icon-filter
+                span Refine search results
+              .results__filter__head__counter <span>1-10</span> of <span>45</span> results
+            
+            .results__filter__dropdown
+              .results__filter__group
+                label APPOINTMENT DATE
+                input.ui-input.js-datepicker
+              .results__filter__group
+                label CONSULTATION FEE
+                input(type='range').js-rangeslider
+              .results__filter__group
+                label OPTIONS
+                .ui-checkbox.ui-checkbox--chunk
+                  input(type='checkbox' name='options' id='checkbox_1')
+                  label(for='checkbox_1') 
+                    span With reviews only
+                  
+                .ui-checkbox.ui-checkbox--chunk
+                  input(type='checkbox' name='options' id='checkbox_2')
+                  label(for='checkbox_2') 
+                    span Phd only
+                  
+                    
+            
+          
+          // card list
+          .results__card-list
+            // card
+            .results__card(data-id='')
+              .results__card__author
+                .results__card__avatar
+                  img(src='images/doctor-avatar.png' srcset='images/doctor-avatar@2x.png 2x')
+                .results__card__author-content
+                  .results__card__author-name Dr Robert Smith, Phd
+                  .results__card__rating
+                    i.icon.icon-rating
+                    span <span>4.8/5</span> based on 5 reviews
+              .results__card__location
+                i.icon.icon-location
+                .results__card__location-content 2810 N Flores St <br> San Antonio, TX, United States <span>72 Miles from you</span>
+              .results__card__line
+                .results__card__time
+                  i.icon.icon-time
+                  .results__card__time-content <span>Wednesday, 12:00</span> 20 May 2017
+                .results__card__price $120
+              .results__card__cta
+                .results__card__cta__wrapper
+                  a(href='#').btn
+                    span Book
+                    
+            // card
+            .results__card(data-id='')
+              .results__card__author
+                .results__card__avatar
+                  img(src='images/doctor-avatar.png' srcset='images/doctor-avatar@2x.png 2x')
+                .results__card__author-content
+                  .results__card__author-name Dr Robert Smith, Phd
+                  .results__card__rating
+                    i.icon.icon-rating
+                    span <span>4.8/5</span> based on 5 reviews
+              .results__card__location
+                i.icon.icon-location
+                .results__card__location-content 2810 N Flores St <br> San Antonio, TX, United States <span>72 Miles from you</span>
+              .results__card__line
+                .results__card__time
+                  i.icon.icon-time
+                  .results__card__time-content <span>Wednesday, 12:00</span> 20 May 2017
+                .results__card__price $120
+              .results__card__cta
+                .results__card__cta__wrapper
+                  a(href='#').btn
+                    span Book
+            
+            // card
+            .results__card(data-id='')
+              .results__card__author
+                .results__card__avatar
+                  img(src='images/doctor-avatar.png' srcset='images/doctor-avatar@2x.png 2x')
+                .results__card__author-content
+                  .results__card__author-name Dr Robert Smith, Phd
+                  .results__card__rating
+                    i.icon.icon-rating
+                    span <span>4.8/5</span> based on 5 reviews
+              .results__card__location
+                i.icon.icon-location
+                .results__card__location-content 2810 N Flores St <br> San Antonio, TX, United States <span>72 Miles from you</span>
+              .results__card__line
+                .results__card__time
+                  i.icon.icon-time
+                  .results__card__time-content <span>Wednesday, 12:00</span> 20 May 2017
+                .results__card__price $120
+              .results__card__cta
+                .results__card__cta__wrapper
+                  a(href='#').btn
+                    span Book
+                    
+            // card
+            .results__card(data-id='')
+              .results__card__author
+                .results__card__avatar
+                  img(src='images/doctor-avatar.png' srcset='images/doctor-avatar@2x.png 2x')
+                .results__card__author-content
+                  .results__card__author-name Dr Robert Smith, Phd
+                  .results__card__rating
+                    i.icon.icon-rating
+                    span <span>4.8/5</span> based on 5 reviews
+              .results__card__location
+                i.icon.icon-location
+                .results__card__location-content 2810 N Flores St <br> San Antonio, TX, United States <span>72 Miles from you</span>
+              .results__card__line
+                .results__card__time
+                  i.icon.icon-time
+                  .results__card__time-content <span>Wednesday, 12:00</span> 20 May 2017
+                .results__card__price $120
+              .results__card__cta
+                .results__card__cta__wrapper
+                  a(href='#').btn
+                    span Book
+            
+        // map  
+        .results__map
+          .js-google-map
+
+    
+    include shared/footer.pug

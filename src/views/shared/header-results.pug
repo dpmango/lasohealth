@@ -1,0 +1,110 @@
+// HEADER::START
+header.header.header--static.header--results
+  .header__wrapper
+    .header__logo
+      img(src='images/logo.png' srcset='images/logo@2x.png 2x')
+    form.header__search(action='results.html')
+      .header__search__input.header__search__input--issue
+        i.icon.icon-tool
+        input(type='text' placeholder='Symptom' value='Cold')
+      .header__search__input.header__search__input--location
+        i.icon.icon-location
+        input(type='text' placeholder='Location' value='Austin, TX')
+    .header__user
+      a(href='#' data-modal='modalLogin') Log in
+      a(href='#' data-modal='modalSignup') Sign up
+
+// MODAL LOGIN
+.modal#modalLogin
+  .modal__wrapper
+    .modal__bg
+    .modal__container
+      .modal__close
+        i.icon.icon-close
+      .modal__content
+        .modal__logo
+          img(src='images/logo-modal.png' srcset='images/logo-modal@2x.png 2x')
+        .modal__heading Welcome to LasoHealth
+        .modal__subheading Login to your account
+        form(action='#').modal__form
+          .input.input--dynamic
+            label Your email
+            input(type='email')
+          .input.input--dynamic
+            label Your password
+            input(type='password')
+          button(type='submit').btn.modal__form__cta Login
+        .modal__helper 
+          span Forgot your password?
+          a(href='#' data-modal='modalRecover') Recover password
+        .modal__helper 
+          span Don’t have a account?
+          a(href='#' data-modal='modalSignup') Get started
+            
+        .social-login
+          a(href='#').btn.social-login__btn.social-login__btn--facebook
+            i.icon.icon-social-logic-fb
+            span LOGIN WITH FACEBOOK
+          a(href='#').btn.social-login__btn.social-login__btn--google
+            i.icon.icon-social-logic-gp
+            span LOGIN WITH GOOGLE +
+              
+// MODAL SIGNUP
+.modal#modalSignup
+  .modal__wrapper
+    .modal__bg
+    .modal__container
+      .modal__close
+        i.icon.icon-close
+      .modal__content
+        .modal__logo
+          img(src='images/logo-modal.png' srcset='images/logo-modal@2x.png 2x')
+        .modal__heading Welcome to LasoHealth
+        .modal__subheading Sign up for free!
+        form(action='#').modal__form
+          .input.input--dynamic
+            label Your email
+            input(type='email')
+          .input.input--dynamic
+            label Your name
+            input(type='text')
+          .input.input--dynamic
+            label Your phone number
+            input(type='tel')
+          button(type='submit').btn.modal__form__cta Sign Up
+        .modal__helper 
+          span Already have an account?
+          a(href='#' data-modal='modalLogin') Login here
+            
+        .social-login
+          a(href='#').btn.social-login__btn.social-login__btn--facebook
+            i.icon.icon-social-logic-fb
+            span CONTINUE WITH FACEBOOK
+          a(href='#').btn.social-login__btn.social-login__btn--google
+            i.icon.icon-social-logic-gp
+            span CONTINUE WITH GOOGLE +
+                          
+
+// MODAL Recover
+.modal#modalRecover
+  .modal__wrapper
+    .modal__bg
+    .modal__container
+      .modal__close
+        i.icon.icon-close
+      .modal__content
+        .modal__logo
+          img(src='images/logo-modal.png' srcset='images/logo-modal@2x.png 2x')
+        .modal__heading Welcome to LasoHealth
+        .modal__subheading Forgot your password?
+        form(action='#').modal__form
+          .input.input--dynamic
+            label Your email
+            input(type='email')
+          button(type='submit').btn.modal__form__cta Send Me Recovery Instructions
+        .modal__helper 
+          span Forgot your password?
+          a(href='#') Recover password
+        .modal__helper 
+          span Don’t have a account?
+          a(href='#' data-modal='modalSignup') Get started
