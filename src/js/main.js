@@ -212,7 +212,7 @@ $(document).ready(function () {
       start: [90, 120],
       connect: true,
       tooltips: true,
-      step: 5,
+      step: 1,
       // pips: { // Show a scale with the slider
       // 	mode: 'steps',
       // 	stepped: true,
@@ -223,6 +223,12 @@ $(document).ready(function () {
         'max': [120]
       }
     });
+
+    // method to get current value
+    // rangeSlider.noUiSlider.get();
+
+    // docs on noUiSlider
+    // https://refreshless.com/nouislider/slider-read-write/
   }
 
   // OPTIONAL
