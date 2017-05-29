@@ -33,6 +33,7 @@
     display: flex
     font-size: 18px
     margin-left: 40px
+    margin-right: auto
     transform: translate3d(0, -80px, 0)
     transition: all $transitionSpeed $ease
     &--mobile
@@ -149,6 +150,8 @@
     transform: translate3d(0, 0px, 0)
   &--results
     box-shadow: none
+    .header__logo
+      flex-basis: 440px
     .header__wrapper
       max-width: 100%
     .header__search
@@ -159,6 +162,17 @@
         .icon
           color: $colorRed
 
+@media(width >= 1600px)
+  .header
+    &--results
+      .header__logo
+        flex-basis: 780px
+
+@media($wide)
+  .header
+    &--results
+      .header__logo
+        flex-basis: 360px
 @media($desktop)
   .header
     transform: translate3d(0,-130px,0)
@@ -349,22 +363,31 @@
   &.opened
     opacity: 1
     pointer-events: all
+    .modal__bg
+      transform: scale(10)
     .modal__container
       transform: translate3d(0,0,0)
   &__wrapper
     position: relative
     min-height: 100vh
   &__bg
-    position: absolute 0 0 0 0
+    position: absolute
+    right: 0px
+    top: 0px
+    height: 25%
+    width: 25%
     background: #F4F5F7
     z-index: 91
+    transform: scale(0)
+    border-radius: 50%
+    transition: all .3s $ease
   &__container
     position: relative
     z-index: 92
     overflow-x: scroll
     max-height: 100vh
     transform: translate3d(0,-100%,0)
-    transition: all .4s ease-out
+    transition: all .3s .2s ease-out
   &__close
     display: flex
     justify-content: center
@@ -387,12 +410,13 @@
       box-shadow: none
       color: $colorRed
 
-
   &__content
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
+    padding-left: 20px
+    padding-right: 20px
   &__logo
     margin-top: 35px
   &__heading
@@ -400,9 +424,11 @@
     font-size: 36px
     font-weight: 600
     margin-bottom: 15px
+    text-align: center
   &__subheading
     color: $grayColor
     font-size: 18px
+    text-align: center
 
   &__form
     background: white
@@ -444,6 +470,32 @@
       &:hover
         color: $colorRed
 
+@media($mobile)
+  .modal
+    &__close
+      top: 10px
+      right: 20px
+    &__logo
+      margin-top: 20px
+
+    &__heading
+      font-size: 30px
+    &__subheading
+      font-size: 16px
+
+@media(width <= 480px)
+  .modal
+    &__close
+      right: 10px
+    &__form
+      padding-top: 30px
+      width: 100%
+      max-width: 100%
+      .input
+        margin-left: 25px
+        margin-right: 25px
+        min-width: 1px
+        width: calc(100% - 50px)
 
 // SMALLER COMPONENTS - CHUNKS
 
@@ -477,3 +529,26 @@
       color: $googleColor
       &:hover
         background: $googleColor
+
+@media($tablet)
+  .social-login
+    margin-left: -10px
+    margin-right: -10px
+    &__btn
+      margin-left: 10px
+      margin-right: 10px
+
+@media($mobile)
+  .social-login
+    margin: 35px auto
+    text-align: center
+    &__btn
+      margin: 10px
+
+@media($mobile-s)
+  .social-login
+    &__btn
+      font-size: 15px
+      padding: 10px 15px 8px 15px
+      .icon
+        margin-right: 15px

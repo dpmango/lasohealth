@@ -80,11 +80,20 @@ $(document).ready(function () {
     // find by id
     var target = $(this).data('modal');
     $('#' + target).addClass('opened');
+
+    window.location.hash = target;
   });
 
   $('.modal__close').on('click', function () {
     $(this).closest('.modal').removeClass('opened');
+    window.location.hash = "";
   });
+
+  // CHECK SAVED STATE
+  if (window.location.hash) {
+    var hash = window.location.hash.substring(1);
+    $('#' + hash).addClass('opened');
+  }
 
   // INPUTS FOCUS
   // Codedrops based - pure javascript
@@ -170,6 +179,12 @@ $(document).ready(function () {
     var selectedSlide = $(this).data('slide');
 
     $('.testimonials__slider').slick('slickGoTo', selectedSlide);
+  });
+
+  // VIDEO PLAY
+  $('.video .icon-video-play').on('click', function () {
+    $(this).closest('.video').toggleClass('playing');
+    $(this).closest('.video').find('.video__iframe iframe').attr("src", $(".video__iframe iframe").attr("src").replace("autoplay=0", "autoplay=1"));
   });
 
   /////////////

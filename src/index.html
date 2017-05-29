@@ -41,88 +41,6 @@
       <div class="header__user"><a href="#" data-modal="modalLogin">Log in</a><a href="#" data-modal="modalSignup">Sign up</a></div>
     </div>
   </header>
-  <!-- MODAL LOGIN-->
-  <div class="modal" id="modalLogin">
-    <div class="modal__wrapper">
-      <div class="modal__bg"></div>
-      <div class="modal__container">
-        <div class="modal__close"><i class="icon icon-close"></i></div>
-        <div class="modal__content">
-          <div class="modal__logo"><img src="images/logo-modal.png" srcset="images/logo-modal@2x.png 2x"></div>
-          <div class="modal__heading">Welcome to LasoHealth</div>
-          <div class="modal__subheading">Login to your account</div>
-          <form class="modal__form" action="#">
-            <div class="input input--dynamic">
-              <label>Your email</label>
-              <input type="email">
-            </div>
-            <div class="input input--dynamic">
-              <label>Your password</label>
-              <input type="password">
-            </div>
-            <button class="btn modal__form__cta" type="submit">Login</button>
-          </form>
-          <div class="modal__helper"> <span>Forgot your password?</span><a href="#" data-modal="modalRecover">Recover password</a></div>
-          <div class="modal__helper"> <span>Don’t have a account?</span><a href="#" data-modal="modalSignup">Get started</a></div>
-          <div class="social-login"><a class="btn social-login__btn social-login__btn--facebook" href="#"><i class="icon icon-social-logic-fb"></i><span>LOGIN WITH FACEBOOK</span></a><a class="btn social-login__btn social-login__btn--google" href="#"><i class="icon icon-social-logic-gp"></i><span>LOGIN WITH GOOGLE +</span></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- MODAL SIGNUP-->
-  <div class="modal" id="modalSignup">
-    <div class="modal__wrapper">
-      <div class="modal__bg"></div>
-      <div class="modal__container">
-        <div class="modal__close"><i class="icon icon-close"></i></div>
-        <div class="modal__content">
-          <div class="modal__logo"><img src="images/logo-modal.png" srcset="images/logo-modal@2x.png 2x"></div>
-          <div class="modal__heading">Welcome to LasoHealth</div>
-          <div class="modal__subheading">Sign up for free!</div>
-          <form class="modal__form" action="#">
-            <div class="input input--dynamic">
-              <label>Your email</label>
-              <input type="email">
-            </div>
-            <div class="input input--dynamic">
-              <label>Your name</label>
-              <input type="text">
-            </div>
-            <div class="input input--dynamic">
-              <label>Your phone number</label>
-              <input type="tel">
-            </div>
-            <button class="btn modal__form__cta" type="submit">Sign Up</button>
-          </form>
-          <div class="modal__helper"> <span>Already have an account?</span><a href="#" data-modal="modalLogin">Login here</a></div>
-          <div class="social-login"><a class="btn social-login__btn social-login__btn--facebook" href="#"><i class="icon icon-social-logic-fb"></i><span>CONTINUE WITH FACEBOOK</span></a><a class="btn social-login__btn social-login__btn--google" href="#"><i class="icon icon-social-logic-gp"></i><span>CONTINUE WITH GOOGLE +</span></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- MODAL Recover-->
-  <div class="modal" id="modalRecover">
-    <div class="modal__wrapper">
-      <div class="modal__bg"></div>
-      <div class="modal__container">
-        <div class="modal__close"><i class="icon icon-close"></i></div>
-        <div class="modal__content">
-          <div class="modal__logo"><img src="images/logo-modal.png" srcset="images/logo-modal@2x.png 2x"></div>
-          <div class="modal__heading">Welcome to LasoHealth</div>
-          <div class="modal__subheading">Forgot your password?</div>
-          <form class="modal__form" action="#">
-            <div class="input input--dynamic">
-              <label>Your email</label>
-              <input type="email">
-            </div>
-            <button class="btn modal__form__cta" type="submit">Send Me Recovery Instructions</button>
-          </form>
-          <div class="modal__helper"> <span>Forgot your password?</span><a href="#">Recover password</a></div>
-          <div class="modal__helper"> <span>Don’t have a account?</span><a href="#" data-modal="modalSignup">Get started</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- HERO :: START-->
   <div class="hero">
     <!-- also for js animation-->
@@ -224,7 +142,7 @@
   <!-- VIDEO-->
   <div class="video">
     <div class="video__iframe">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/NCfWqLFqG24" frameborder="0" allowfullscreen=""></iframe>
+      <iframe src="https://www.youtube.com/embed/KDFECSgvwqs" frameborder="0" allowfullscreen="1" autoplay="0"></iframe>
     </div>
     <div class="video__image"><img src="images/booking-video.png" srcset="images/booking-video@2x.png 2x"></div>
     <div class="video__content">
@@ -262,6 +180,88 @@
   <div class="cta">
     <div class="text-center">
       <p>Now it’s time to get the best local appointment deals. <br> Join LasoHealth for free!</p><a class="btn btn--primary btn--huge" href="#" data-modal="modalSignup">Sign Up</a>
+    </div>
+  </div>
+  <!-- MODAL LOGIN-->
+  <div class="modal" id="modalLogin">
+    <div class="modal__wrapper">
+      <div class="modal__bg"></div>
+      <div class="modal__container">
+        <div class="modal__close"><i class="icon icon-close"></i></div>
+        <div class="modal__content">
+          <div class="modal__logo"><img src="images/logo-modal.png" srcset="images/logo-modal@2x.png 2x"></div>
+          <div class="modal__heading">Welcome to LasoHealth</div>
+          <div class="modal__subheading">Login to your account</div>
+          <form class="modal__form" action="#">
+            <div class="input input--dynamic">
+              <label>Your email</label>
+              <input type="email">
+            </div>
+            <div class="input input--dynamic">
+              <label>Your password</label>
+              <input type="password">
+            </div>
+            <button class="btn modal__form__cta" type="submit">Login</button>
+          </form>
+          <div class="modal__helper"> <span>Forgot your password?</span><a href="#" data-modal="modalRecover">Recover password</a></div>
+          <div class="modal__helper"> <span>Don’t have a account?</span><a href="#" data-modal="modalSignup">Get started</a></div>
+          <div class="social-login"><a class="btn social-login__btn social-login__btn--facebook" href="#"><i class="icon icon-social-logic-fb"></i><span>LOGIN WITH FACEBOOK</span></a><a class="btn social-login__btn social-login__btn--google" href="#"><i class="icon icon-social-logic-gp"></i><span>LOGIN WITH GOOGLE +</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL SIGNUP-->
+  <div class="modal" id="modalSignup">
+    <div class="modal__wrapper">
+      <div class="modal__bg"></div>
+      <div class="modal__container">
+        <div class="modal__close"><i class="icon icon-close"></i></div>
+        <div class="modal__content">
+          <div class="modal__logo"><img src="images/logo-modal.png" srcset="images/logo-modal@2x.png 2x"></div>
+          <div class="modal__heading">Welcome to LasoHealth</div>
+          <div class="modal__subheading">Sign up for free!</div>
+          <form class="modal__form" action="#">
+            <div class="input input--dynamic">
+              <label>Your email</label>
+              <input type="email">
+            </div>
+            <div class="input input--dynamic">
+              <label>Your name</label>
+              <input type="text">
+            </div>
+            <div class="input input--dynamic">
+              <label>Your phone number</label>
+              <input type="tel">
+            </div>
+            <button class="btn modal__form__cta" type="submit">Sign Up</button>
+          </form>
+          <div class="modal__helper"> <span>Already have an account?</span><a href="#" data-modal="modalLogin">Login here</a></div>
+          <div class="social-login"><a class="btn social-login__btn social-login__btn--facebook" href="#"><i class="icon icon-social-logic-fb"></i><span>CONTINUE WITH FACEBOOK</span></a><a class="btn social-login__btn social-login__btn--google" href="#"><i class="icon icon-social-logic-gp"></i><span>CONTINUE WITH GOOGLE +</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL Recover-->
+  <div class="modal" id="modalRecover">
+    <div class="modal__wrapper">
+      <div class="modal__bg"></div>
+      <div class="modal__container">
+        <div class="modal__close"><i class="icon icon-close"></i></div>
+        <div class="modal__content">
+          <div class="modal__logo"><img src="images/logo-modal.png" srcset="images/logo-modal@2x.png 2x"></div>
+          <div class="modal__heading">Welcome to LasoHealth</div>
+          <div class="modal__subheading">Forgot your password?</div>
+          <form class="modal__form" action="#">
+            <div class="input input--dynamic">
+              <label>Your email</label>
+              <input type="email">
+            </div>
+            <button class="btn modal__form__cta" type="submit">Send Me Recovery Instructions</button>
+          </form>
+          <div class="modal__helper"> <span>Forgot your password?</span><a href="#">Recover password</a></div>
+          <div class="modal__helper"> <span>Don’t have a account?</span><a href="#" data-modal="modalSignup">Get started</a></div>
+        </div>
+      </div>
     </div>
   </div>
   <!-- FOOTER::START-->

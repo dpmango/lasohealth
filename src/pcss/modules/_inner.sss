@@ -60,6 +60,8 @@
       max-width: 350px
       margin-left: auto
       margin-right: auto
+      border-bottom: 1px solid $borderColor
+
       transition: all $transitionSpeed $ease
     &__group
       margin-top: 30px
@@ -203,3 +205,29 @@
     flex-direction: column
     .js-google-map
       flex: 1
+
+
+@media(width >= 1600px)
+  .results
+    &__cards
+      flex: 0 0 840px
+    &__card-list
+      margin-top: 20px
+    &__card
+      margin-left: 20px
+      margin-right: 20px
+    &__map
+      flex: 0 1 calc(100% - 840px)
+
+@media($wide)
+  .results
+    &__cards
+      flex: 0 0 420px
+    &__map
+      flex: 0 1 calc(100% - 420px)
+
+@media($mobile)
+  .results
+    padding-top: 60px
+    &__wrapper
+      flex-direction: column
