@@ -8,6 +8,7 @@ button
   border: 0
   box-shadow: none
   cursor: pointer
+  vertical-align: middle
   display: inline-block
   position: relative
   text-align: center
@@ -42,3 +43,10 @@ button
       background: $colorRed
       color: white
       box-shadow: none
+
+
+@media($mobile)
+  .btn
+    &--primary
+      &.btn--huge
+        min-width: 280px

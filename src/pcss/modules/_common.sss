@@ -22,8 +22,12 @@
     padding-right: 20px
   &__logo
     flex: 0 0 auto
+    padding-right: 30px
     display: flex
     align-items: center
+    transition: all $transitionSpeed $ease
+    &:hover
+      opacity: .85
   &__search
     flex: 0 1 auto
     display: flex
@@ -31,6 +35,34 @@
     margin-left: 40px
     transform: translate3d(0, -80px, 0)
     transition: all $transitionSpeed $ease
+    &--mobile
+      display: none
+      background: $fontColor
+      padding: 30px 20px
+      margin: 0 auto
+      height: 130px
+      overflow: hidden
+      transform: translate3d(0, -100%, 0)
+      .header__search__input
+        background: white
+        flex-grow: 1
+        max-width: 100%
+        &:first-child
+          border-top-left-radius: 5px
+          border-bottom-left-radius: 5px
+      button[type='submit']
+        flex: 0 0 80px
+        border: 0
+        background: $colorRed
+        font-size: 27px
+        color: white
+        width: 80px
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+        cursor: pointer
+        transition: all $transitionSpeed $ease
+        &:hover
+          background: $colorGreen
     &__input
       flex: 0 1 auto
       max-width: 210px
@@ -69,7 +101,6 @@
         transition: all $transitionSpeed $ease
 
   &__user
-    margin-left: auto
     flex: 0 0 auto
     display: flex
     align-items: center
@@ -89,6 +120,23 @@
       &:hover
         &::after
           color: $grayColor
+  &__mobile
+    flex: 0 0 auto
+    display: none
+    padding-left: 30px
+    padding-right: 30px
+    align-items: center
+    font-size: 20px
+    color: color(#6C7A89 a(50%))
+    border-left: 1px solid $borderColor
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &--search
+      margin-left: auto
+    &:hover
+      background: white
+      color: #6C7A89
+
 
   &--transformed
     position: fixed
@@ -111,7 +159,48 @@
         .icon
           color: $colorRed
 
+@media($desktop)
+  .header
+    transform: translate3d(0,-130px,0)
+    &--search-enabled
+      transform: translate3d(0,0,0)
+      .header__search
+        &--mobile
+          transform: translate3d(0,0,0)
+    &__search
+      display: none
+      &--mobile
+        display: flex
+    &__mobile
+      &--search
+        display: flex
+        &.active
+          color: red
+          background: white
 
+@media($mobile)
+  .header
+    &__wrapper
+      padding-right: 0
+      height: 60px
+      padding-left: 15px
+    &__logo
+      flex-shrink: 1
+      img
+        max-width: 100%
+    &__user
+      display: none
+    &__mobile
+      padding-left: 25px
+      padding-right: 25px
+      &--user
+        display: flex
+
+@media($mobile)
+  .header
+    &__mobile
+      padding-left: 15px
+      padding-right: 15px
 
 // FOOTER
 .footer
@@ -162,6 +251,8 @@
       a
         display: inline-block
         margin-right: 35px
+        &:last-child
+          margin-right: 0
       .icon
         color: white
         font-size: 27px
@@ -175,6 +266,61 @@
             color: #3b5998
 
 
+@media(width <= 820px)
+  .footer
+    padding-bottom: 10px
+    &__wrapper
+      flex-wrap: wrap
+    &__copy
+      order: 1
+    &__menu
+      order: 2
+    &__contact
+      order: 3
+    &__socials
+      order: 4
+      flex: 1 1 100%
+      transform: translate3d(0, -40px,0)
+      &__head
+        display: none
+
+@media($mobile)
+  .footer
+    &__contact
+      display: none
+
+@media($mobile-s)
+  .footer
+    padding-top: 40px
+    padding-bottom: 25px
+    &__wrapper
+      justify-content: center
+    &__menu
+      order: 1
+      flex: 1 1 100%
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      a
+        margin: 5px 10px
+    &__copy
+      order: 3
+      flex: 0 1 100%
+      img
+        display: none
+      span
+        margin-left: auto
+        margin-right: auto
+        br
+          display: none
+    &__socials
+      flex: 0 1 auto
+      order: 2
+      margin: 25px auto
+      text-align: center
+      transform: translate3d(0, 0px,0)
+
+
 // HEADING
 .heading
   font-family: 'Montserrat', sans-serif
@@ -183,7 +329,14 @@
   margin-bottom: 35px
 .subheading
   font-size: 20px
+  line-height: 1.5
 
+@media($mobile)
+  .heading
+    font-size: 32px
+    margin-bottom: 25px
+  .subheading
+    font-size: 18px
 
 // MODALS
 .modal

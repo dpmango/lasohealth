@@ -1,7 +1,17 @@
 // HEADER::START
 header.header
+  form.header__search.header__search--mobile(action='results.html')
+    .header__search__input.header__search__input--issue
+      i.icon.icon-tool
+      input(type='text' placeholder='Symptom')
+    .header__search__input.header__search__input--location
+      i.icon.icon-location
+      input(type='text' placeholder='Location')
+    button(type='submit')
+      i.icon.icon-search-big
+            
   .header__wrapper
-    .header__logo
+    a(href='/').header__logo
       img(src='images/logo.png' srcset='images/logo@2x.png 2x')
     form.header__search(action='results.html')
       .header__search__input.header__search__input--issue
@@ -10,6 +20,10 @@ header.header
       .header__search__input.header__search__input--location
         i.icon.icon-location
         input(type='text' placeholder='Location')
+    .header__mobile.header__mobile--search
+      i.icon.icon-tool
+    .header__mobile.header__mobile--user(data-modal='modalSignup')
+      i.icon.icon-user
     .header__user
       a(href='#' data-modal='modalLogin') Log in
       a(href='#' data-modal='modalSignup') Sign up

@@ -61,6 +61,12 @@ $(document).ready(function(){
 
   });
 
+  // MOBILE
+  $('.header__mobile--search').on('click', function(){
+    $(this).toggleClass('active');
+    $('.header').toggleClass('header--search-enabled');
+  });
+
   /////////
   // MODAL
   ////////
@@ -187,37 +193,38 @@ $(document).ready(function(){
   });
 
   // RANGESLIDER
-  // $('.js-rangeslider').rangeslider({
-  //     polyfill: false,
-  //     rangeClass: 'rangeslider',
-  //     disabledClass: 'rangeslider--disabled',
-  //     horizontalClass: 'rangeslider--horizontal',
-  //     verticalClass: 'rangeslider--vertical',
-  //     fillClass: 'rangeslider__fill',
-  //     handleClass: 'rangeslider__handle',
-  //
-  //     onInit: function() {},
-  //     onSlide: function(position, value) {},
-  //     onSlideEnd: function(position, value) {}
-  // });
-
   var rangeSlider = document.querySelector('.js-rangeslider');
 
-  noUiSlider.create( rangeSlider, {
-  	start: [ 90, 120 ],
-    connect: true,
-    tooltips: true,
-    step: 5,
-    // pips: { // Show a scale with the slider
-  	// 	mode: 'steps',
-  	// 	stepped: true,
-  	// 	density: 4
-  	// },
-  	range: {
-  		'min': [  80 ],
-  		'max': [ 120 ]
-  	}
-  });
+  if ( $('.js-rangeslider').length > 0 ){
+    noUiSlider.create( rangeSlider, {
+    	start: [ 90, 120 ],
+      connect: true,
+      tooltips: true,
+      step: 5,
+      // pips: { // Show a scale with the slider
+    	// 	mode: 'steps',
+    	// 	stepped: true,
+    	// 	density: 4
+    	// },
+    	range: {
+    		'min': [  80 ],
+    		'max': [ 120 ]
+    	}
+    });
+  }
 
+  // OPTIONAL
+  // hero parallax on mousemove
+
+  var movementStrength = 50;
+  var height = movementStrength / _window.height();
+  var width = movementStrength / _window.width();
+  $(".hero").mousemove(function(e){
+    var pageX = e.pageX - (_window.width() / 2);
+    var pageY = e.pageY - (_window.height() / 2);
+    var newvalueX = width * pageX * -1 - 25;
+    var newvalueY = height * pageY * -1 - 50;
+    $('.hero-bg').css("background-position", newvalueX+"px     "+newvalueY+"px");
+  });
 
 });

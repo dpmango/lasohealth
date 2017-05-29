@@ -4,15 +4,16 @@
   padding-top: 150px
   color: white
   overflow: hidden
-  &::after
-    display: block
-    content: ' '
+  &-bg
     position: absolute 0 0 0 0
     z-index: 1
     background: url('../images/heroBg.png')
+    background-position: -25px -50px
+    background-size: cover
   &__wrapper
     position: relative
     z-index: 2
+    padding: 0 20px
     display: flex
     text-align: center
     align-items: center
@@ -93,6 +94,8 @@
       border-bottom-right-radius: 5px
       cursor: pointer
       transition: all $transitionSpeed $ease
+      span
+        display: none
       &:hover
         background: $colorGreen
 
@@ -103,6 +106,62 @@
       font-family: 'Montserrat', sans-serif
       font-size: 18px
       margin-bottom: 15px
+
+@media($desktop)
+  .hero
+    &__title
+      font-size: 42px
+      letter-spacing: -.7px
+
+@media($mobile)
+  .hero
+    padding-top: 120px
+    &__title
+      font-size: 35px
+      line-height: 1.35
+      letter-spacing: 0
+    .hero__searchbar
+      margin-top: 35px
+      font-size: 18px
+      &__group
+        height: auto
+        flex-direction: column
+        align-items: center
+        margin-bottom: 70px
+        border-radius: 5px
+        background: transparent
+        box-shadow: none
+        border: 0
+      &__input
+        margin-bottom: 20px
+        background: white
+        flex: 0 1 auto
+        border-radius: 5px
+        &.focused
+          background: $lightBg
+          input
+            background: $lightBg
+        input
+          padding: 20px 20px 20px 25px
+          border-top-left-radius: 5px
+          border-bottom-left-radius: 5px
+      button[type='submit']
+        flex-basis: 60px
+        width: 100%
+        border-radius: 5px
+        span
+          display: inline-block
+          font-size: 18px
+          font-weight: 600
+          margin-right: 15px
+          vertical-align: 1px
+        .icon
+          display: none
+
+    &__secondary
+      &__title
+        font-size: 16px
+        margin-bottom: 10px
 
 // TRENDING
 .trending
@@ -173,6 +232,22 @@
         opacity: 1
         transform: translate3d(0%, -50%, 0)
 
+@media($mobile)
+  .trending
+    padding-top: 80px
+    padding-bottom: 80px
+    &__wrapper
+      margin-top: 50px
+
+@media($mobile-s)
+  .trending
+    &__card
+      width: 230px
+      height: 150px
+      margin-left: 10px
+      margin-right: 10px
+      &__content
+        height: 150px
 
 // METRICS
 .metrics
@@ -204,11 +279,48 @@
       font-size: 18px
       color: $grayColor
 
+@media(width <= 820px)
+  .metrics
+    padding-bottom: 45px
+    &__wrapper
+      flex-wrap: wrap
+    &__card
+      flex-basis: calc(50% - 20px)
+      margin-left: 10px
+      margin-right: 10px
+      margin-bottom: 20px
+      padding: 20px 15px
+      &__number
+        font-size: 38px
+
+@media($mobile)
+  .metrics
+    padding: 40px 0 20px 0
+    &__card
+      flex-basis: calc(50% - 15px)
+      margin-left: 7px
+      margin-right: 7px
+      &__text
+        font-size: 16px
+
+@media($mobile-s)
+  .metrics
+    &__card
+      border-radius: 6px
+      flex-basis: 100%
+      margin-left: 0
+      margin-right: 0
+      margin-bottom: 15px
+      padding: 15px 10px
+      &__number
+        font-size: 38px
+
+
+
 
 // ABOUT
 .about
-  padding-top: 110px
-  padding-bottom: 100px
+  padding: 110px 20px 100px 20px
   &__wrapper
     max-width: 780px
     margin-left: auto
@@ -218,6 +330,16 @@
       line-height: 1.5
       margin-bottom: 1.5em
 
+@media($mobile)
+  .about
+    padding: 70px 20px 50px 20px
+    p
+      font-size: 18px
+
+@media($mobile-s)
+  .about
+    p
+      font-size: 16px
 
 // VIDEO
 .video
@@ -263,6 +385,18 @@
         color: color(white a(70%))
 
 
+@media($desktop)
+  .video
+    &__image
+      height: 400px
+
+
+@media($mobile)
+  .video
+    &__image
+      height: 300px
+
+
 // TESTIMONIALS
 .testimonials
   padding-top: 90px
@@ -270,8 +404,6 @@
   max-width: 780px
   margin-left: auto
   margin-right: auto
-  padding-left: 20px
-  padding-right: 20px
   .icon-quote
     color: #ECF0F1
     font-size: 70px
@@ -279,6 +411,8 @@
   &__slide
     opacity: 1
     text-align: center
+    padding-left: 20px
+    padding-right: 20px
   &__content
     font-size: 22px
     line-height: 1.45
@@ -292,9 +426,12 @@
     justify-content: center
     a
       opacity: .35
+      size: 50px
       transition: all $transitionSpeed $ease
       margin-right: 17px
       margin-left: 17px
+      img
+        max-width: 100%
       &.active
         opacity: 1
         &:hover
@@ -302,13 +439,36 @@
       &:hover
         opacity: .7
 
+@media($mobile)
+  .testimonials
+    padding-top: 70px
+    padding-bottom: 60px
+    .icon-quote
+      font-size: 50px
+      margin-bottom: 25px
+    &__content
+      font-size: 18px
+    &__author
+      font-size: 15px
+      margin-top: 20px
+    &__nav
+      margin-top: 25px
+      a
+        size: 45px
+        margin-left: 10px
+        margin-right: 10px
+
+
 
 // CTA
 .cta
   background: #F4F5F7
-  padding-top: 100px
-  padding-bottom: 80px
+  padding: 100px 20px 80px 20px
   p
     font-size: 20px
     line-height: 1.5
     margin-bottom: 40px
+
+@media($mobile)
+  .cta
+    padding: 60px 15px 60px 15px
