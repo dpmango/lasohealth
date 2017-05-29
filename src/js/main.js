@@ -184,17 +184,35 @@ $(document).ready(function () {
   });
 
   // RANGESLIDER
-  $('.js-rangeslider').rangeslider({
-    polyfill: false,
-    rangeClass: 'rangeslider',
-    disabledClass: 'rangeslider--disabled',
-    horizontalClass: 'rangeslider--horizontal',
-    verticalClass: 'rangeslider--vertical',
-    fillClass: 'rangeslider__fill',
-    handleClass: 'rangeslider__handle',
+  // $('.js-rangeslider').rangeslider({
+  //     polyfill: false,
+  //     rangeClass: 'rangeslider',
+  //     disabledClass: 'rangeslider--disabled',
+  //     horizontalClass: 'rangeslider--horizontal',
+  //     verticalClass: 'rangeslider--vertical',
+  //     fillClass: 'rangeslider__fill',
+  //     handleClass: 'rangeslider__handle',
+  //
+  //     onInit: function() {},
+  //     onSlide: function(position, value) {},
+  //     onSlideEnd: function(position, value) {}
+  // });
 
-    onInit: function onInit() {},
-    onSlide: function onSlide(position, value) {},
-    onSlideEnd: function onSlideEnd(position, value) {}
+  var rangeSlider = document.querySelector('.js-rangeslider');
+
+  noUiSlider.create(rangeSlider, {
+    start: [90, 120],
+    connect: true,
+    tooltips: true,
+    step: 5,
+    // pips: { // Show a scale with the slider
+    // 	mode: 'steps',
+    // 	stepped: true,
+    // 	density: 4
+    // },
+    range: {
+      'min': [80],
+      'max': [120]
+    }
   });
 });
