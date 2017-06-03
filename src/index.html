@@ -31,9 +31,21 @@
       <form class="header__search" action="results.html">
         <div class="header__search__input header__search__input--issue"><i class="icon icon-tool"></i>
           <input type="text" placeholder="Symptom">
+          <div class="search-dropdown scrollbar-dynamic">
+            <div class="search-dropdown__item" data-id=""><span>C</span>old</div>
+            <div class="search-dropdown__item" data-id=""><span>C</span>hildrens Physical</div>
+            <div class="search-dropdown__item" data-id=""><span>C</span>onstipation</div>
+          </div>
         </div>
         <div class="header__search__input header__search__input--location"><i class="icon icon-location"></i>
           <input type="text" placeholder="Location">
+          <div class="search-dropdown scrollbar-dynamic">
+            <div class="search-dropdown__item" data-id=""><span>Au</span>stin, TX</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>rora, OH</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>stintown, OH</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>gusta, KZ</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>gust, CF</div>
+          </div>
         </div>
       </form>
       <div class="header__mobile header__mobile--search"><i class="icon icon-tool"></i></div>
@@ -51,9 +63,21 @@
         <div class="hero__searchbar__group">
           <div class="hero__searchbar__input hero__searchbar__input--issue">
             <input type="text" placeholder="Symptom"><i class="icon icon-tool"></i>
+            <div class="search-dropdown scrollbar-dynamic">
+              <div class="search-dropdown__item" data-id=""><span>C</span>old</div>
+              <div class="search-dropdown__item" data-id=""><span>C</span>hildrens Physical</div>
+              <div class="search-dropdown__item" data-id=""><span>C</span>onstipation</div>
+            </div>
           </div>
           <div class="hero__searchbar__input hero__searchbar__input--location">
             <input type="text" placeholder="Location"><i class="icon icon-location"></i>
+            <div class="search-dropdown scrollbar-dynamic">
+              <div class="search-dropdown__item" data-id=""><span>Au</span>stin, TX</div>
+              <div class="search-dropdown__item" data-id=""><span>Au</span>rora, OH</div>
+              <div class="search-dropdown__item" data-id=""><span>Au</span>stintown, OH</div>
+              <div class="search-dropdown__item" data-id=""><span>Au</span>gusta, KZ</div>
+              <div class="search-dropdown__item" data-id=""><span>Au</span>gust, CF</div>
+            </div>
           </div>
           <button type="submit"><span>Find Appointment</span><i class="icon icon-search-big"></i></button>
         </div>
@@ -284,6 +308,7 @@
   <script src="components/air-datepicker/dist/js/datepicker.min.js"></script>
   <script src="components/air-datepicker/dist/js/i18n/datepicker.en.js"></script>
   <script src="components/nouislider/distribute/nouislider.min.js"></script>
+  <script src="js/libs/jquery.scrollbar.min.js"></script>
   <script src="js/utilities.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/main.js"></script>

@@ -4,9 +4,11 @@ header.header
     .header__search__input.header__search__input--issue
       i.icon.icon-tool
       input(type='text' placeholder='Symptom')
+
     .header__search__input.header__search__input--location
       i.icon.icon-location
       input(type='text' placeholder='Location')
+          
     button(type='submit')
       i.icon.icon-search-big
             
@@ -17,9 +19,20 @@ header.header
       .header__search__input.header__search__input--issue
         i.icon.icon-tool
         input(type='text' placeholder='Symptom')
+        .search-dropdown.scrollbar-dynamic
+          .search-dropdown__item(data-id='') <span>C</span>old
+          .search-dropdown__item(data-id='') <span>C</span>hildrens Physical
+          .search-dropdown__item(data-id='') <span>C</span>onstipation
       .header__search__input.header__search__input--location
         i.icon.icon-location
         input(type='text' placeholder='Location')
+        .search-dropdown.scrollbar-dynamic
+          .search-dropdown__item(data-id='') <span>Au</span>stin, TX
+          .search-dropdown__item(data-id='') <span>Au</span>rora, OH
+          .search-dropdown__item(data-id='') <span>Au</span>stintown, OH
+          .search-dropdown__item(data-id='') <span>Au</span>gusta, KZ
+          .search-dropdown__item(data-id='') <span>Au</span>gust, CF
+              
     .header__mobile.header__mobile--search
       i.icon.icon-tool
     .header__mobile.header__mobile--user(data-modal='modalSignup')

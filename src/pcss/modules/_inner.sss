@@ -220,7 +220,28 @@
     flex-direction: column
     .js-google-map
       flex: 1
-
+  &__map-toggler
+    display: flex
+    border-top: 1px solid $borderColor
+    padding: 17px 20px
+    font-size: 18px
+    background: $lightBg
+    color: $grayColor
+    cursor: pointer
+    transform: translate3d(0, 100%, 0)
+    opacity: 0
+    position: absolute
+    box-shadow: 0 -3px 6px color(black a(10%))
+    transition: all $transitionSpeed $ease
+    &:hover
+      background: white
+    .icon
+      color: $colorGreen
+      size: 14px
+      margin-right: 10px
+    span
+      display: inline-block
+      margin-left: 10px
 
 @media(width >= 1600px)
   .results
@@ -244,5 +265,78 @@
 @media($mobile)
   .results
     padding-top: 60px
+    &__filter
+      &__head
+        padding-left: 20px
+        padding-right: 20px
     &__wrapper
-      flex-direction: column
+      display: block
+      height: auto
+    &__card-list
+      overflow: visible
+    &__cards
+      flex: 1 1 100vh
+      padding-bottom: 100px
+    &__map
+      display: block
+      position: fixed
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 9
+      transform: translate3d(0,calc(100% - 55px),0)
+      transition: all $transitionSpeed $ease
+      &-toggler
+        opacity: 1
+        position: static
+        transform: translate3d(0,0,0)
+      &.active
+        transform: translate3d(0,0,0)
+        .js-google-map
+          opacity: 1
+          pointer-events: all
+      .js-google-map
+        height: calc(100vh - 55px)
+        opacity: 0
+        pointer-events: none
+      &--stop
+        position: absolute
+        .js-google-map
+          display: none
+        &.active
+          position: fixed
+          .js-google-map
+            display: block
+
+
+
+@media($mobile-s)
+  .results
+    &__filter
+      &__head
+        flex-direction: column
+        &__title
+          margin-bottom: 10px
+        &__counter
+          margin-left: 0
+    &__card
+      flex-shrink: 1
+      margin-left: 20px
+      margin-right: 20px
+      padding: 20px 20px
+      &__cta
+        margin-top: 20px
+        position: static
+        font-size: 16px
+        opacity: 1
+        transform: translate3d(0px,0,0)
+        text-align: center
+        &__wrapper
+          display: inline-block
+        .btn
+          width: auto
+          padding: 7px 40px 9px 40px
+          border-radius: 5px
+          span
+            position: static
+            transform: none

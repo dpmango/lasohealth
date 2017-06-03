@@ -30,10 +30,22 @@
     <div class="header__wrapper"><a class="header__logo" href="/"><img src="images/logo.png" srcset="images/logo@2x.png 2x"></a>
       <form class="header__search" action="results.html">
         <div class="header__search__input header__search__input--issue"><i class="icon icon-tool"></i>
-          <input type="text" placeholder="Symptom">
+          <input type="text" placeholder="Symptom" value="Cold">
+          <div class="search-dropdown scrollbar-dynamic">
+            <div class="search-dropdown__item" data-id=""><span>C</span>old</div>
+            <div class="search-dropdown__item" data-id=""><span>C</span>hildrens Physical</div>
+            <div class="search-dropdown__item" data-id=""><span>C</span>onstipation</div>
+          </div>
         </div>
         <div class="header__search__input header__search__input--location"><i class="icon icon-location"></i>
-          <input type="text" placeholder="Location">
+          <input type="text" placeholder="Location" value="Austin, TX">
+          <div class="search-dropdown scrollbar-dynamic">
+            <div class="search-dropdown__item" data-id=""><span>Au</span>stin, TX</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>rora, OH</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>stintown, OH</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>gusta, KZ</div>
+            <div class="search-dropdown__item" data-id=""><span>Au</span>gust, CF</div>
+          </div>
         </div>
       </form>
       <div class="header__mobile header__mobile--search"><i class="icon icon-tool"></i></div>
@@ -166,6 +178,7 @@
       </div>
       <!-- map  -->
       <div class="results__map">
+        <div class="results__map-toggler"><i class="icon icon-location"></i><span>Show on map</span></div>
         <div class="js-google-map"></div>
       </div>
     </div>
@@ -272,6 +285,7 @@
   <script src="components/air-datepicker/dist/js/datepicker.min.js"></script>
   <script src="components/air-datepicker/dist/js/i18n/datepicker.en.js"></script>
   <script src="components/nouislider/distribute/nouislider.min.js"></script>
+  <script src="js/libs/jquery.scrollbar.min.js"></script>
   <script src="js/utilities.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/main.js"></script>

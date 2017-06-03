@@ -16,10 +16,21 @@ header.header.header--static.header--results
     form.header__search(action='results.html')
       .header__search__input.header__search__input--issue
         i.icon.icon-tool
-        input(type='text' placeholder='Symptom')
+        input(type='text' placeholder='Symptom' value='Cold')
+        .search-dropdown.scrollbar-dynamic
+          .search-dropdown__item(data-id='') <span>C</span>old
+          .search-dropdown__item(data-id='') <span>C</span>hildrens Physical
+          .search-dropdown__item(data-id='') <span>C</span>onstipation
       .header__search__input.header__search__input--location
         i.icon.icon-location
-        input(type='text' placeholder='Location')
+        input(type='text' placeholder='Location' value='Austin, TX')
+        .search-dropdown.scrollbar-dynamic
+          .search-dropdown__item(data-id='') <span>Au</span>stin, TX
+          .search-dropdown__item(data-id='') <span>Au</span>rora, OH
+          .search-dropdown__item(data-id='') <span>Au</span>stintown, OH
+          .search-dropdown__item(data-id='') <span>Au</span>gusta, KZ
+          .search-dropdown__item(data-id='') <span>Au</span>gust, CF
+                
     .header__mobile.header__mobile--search
       i.icon.icon-tool
     .header__mobile.header__mobile--user(data-modal='modalSignup')

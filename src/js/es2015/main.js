@@ -5,7 +5,7 @@ $(document).ready(function(){
   const _document = $(document);
 
   /////////
-  // C'OMMON
+  // COMMON
   /////////
 
  	// Prevent # behavior
@@ -28,7 +28,18 @@ $(document).ready(function(){
   });
 
   $('.header__search__input input').focusout(function(){
-    $(this).parent().removeClass('focused');
+    $(this).parent().removeClass('focused').removeClass('searched');
+  });
+
+  // autcompleate
+  // writeup
+  $('.header__search__input input').keyup(function(){
+    // 2 letter minum for search request
+    if ( $(this).val().length > 1 ){
+      $(this).parent().addClass('searched')
+    } else {
+      $(this).parent().removeClass('searched')
+    }
   });
 
   // and make it red if filed is not empty
@@ -60,6 +71,9 @@ $(document).ready(function(){
     }
 
   });
+
+  // scrollbars
+  $('.scrollbar-dynamic').scrollbar();
 
   // MOBILE
   $('.header__mobile--search').on('click', function(){
@@ -141,7 +155,16 @@ $(document).ready(function(){
   });
 
   $('.hero__searchbar__input input').focusout(function(){
-    $(this).parent().removeClass('focused');
+    $(this).parent().removeClass('focused').removeClass('searched');
+  });
+
+  $('.hero__searchbar__input input').keyup(function(){
+    // 2 letter minum for search request
+    if ( $(this).val().length > 1 ){
+      $(this).parent().addClass('searched')
+    } else {
+      $(this).parent().removeClass('searched')
+    }
   });
 
   // CAROUSELS
@@ -234,6 +257,30 @@ $(document).ready(function(){
     // https://refreshless.com/nouislider/slider-read-write/
 
   }
+
+  // Toggle map results
+  $('.results__map-toggler').on('click', function(){
+    $(this).parent().toggleClass('active');
+
+    if ( $(this).find('span').text() == 'Show on map' ){
+      $(this).find('span').text('Hide map');
+    } else {
+      $(this).find('span').text('Show on map');
+    }
+  });
+
+  // STICKY MAP RESULTS
+  _window.scrolled(10, function () {
+    var stickyEl = $('.results__map');
+    var windowBottomScroll = _window.scrollTop() + _window.height();
+    var stopPoint = _document.height() - $('footer').outerHeight();
+
+    if (windowBottomScroll >= stopPoint) {
+      stickyEl.addClass('results__map--stop');
+    } else if (windowBottomScroll < stopPoint) {
+      stickyEl.removeClass('results__map--stop');
+    }
+  });
 
   // OPTIONAL
   // hero parallax on mousemove

@@ -18,9 +18,21 @@ doctype html
             .hero__searchbar__input.hero__searchbar__input--issue
               input(type='text' placeholder='Symptom')
               i.icon.icon-tool
+              .search-dropdown.scrollbar-dynamic
+                .search-dropdown__item(data-id='') <span>C</span>old
+                .search-dropdown__item(data-id='') <span>C</span>hildrens Physical
+                .search-dropdown__item(data-id='') <span>C</span>onstipation
             .hero__searchbar__input.hero__searchbar__input--location
               input(type='text' placeholder='Location')
               i.icon.icon-location
+              .search-dropdown.scrollbar-dynamic
+                .search-dropdown__item(data-id='') <span>Au</span>stin, TX
+                .search-dropdown__item(data-id='') <span>Au</span>rora, OH
+                .search-dropdown__item(data-id='') <span>Au</span>stintown, OH
+                .search-dropdown__item(data-id='') <span>Au</span>gusta, KZ
+                .search-dropdown__item(data-id='') <span>Au</span>gust, CF
+                
+
             button(type='submit')
               span Find Appointment
               i.icon.icon-search-big
