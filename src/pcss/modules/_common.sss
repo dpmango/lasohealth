@@ -66,6 +66,9 @@
         transition: all $transitionSpeed $ease
         &:hover
           background: $colorGreen
+        span
+          display: none
+
     &__input
       flex: 0 1 auto
       max-width: 210px
@@ -196,6 +199,9 @@
 
 @media($mobile)
   .header
+    transform: translate3d(0,-282px,0)
+    &--search-enabled
+      transform: translate3d(0,0,0)
     &__wrapper
       padding-right: 0
       height: 60px
@@ -212,7 +218,38 @@
       &--user
         display: flex
 
-@media($mobile)
+    &__search
+      &--mobile
+        font-size: 18px
+        flex-direction: column
+        height: auto
+        .header__search__input
+          margin-bottom: 20px
+          background: white
+          flex: 0 1 auto
+          border-radius: 5px
+          &.focused
+            background: $lightBg
+            input
+              background: $lightBg
+          input
+            padding: 20px 20px 20px 25px
+            border-top-left-radius: 5px
+            border-bottom-left-radius: 5px
+        button[type='submit']
+          flex-basis: 60px
+          width: 100%
+          border-radius: 5px
+          span
+            display: inline-block
+            font-size: 18px
+            font-weight: 600
+            margin-right: 15px
+            vertical-align: 1px
+          .icon
+            display: none
+
+@media($mobile-s)
   .header
     &__mobile
       padding-left: 15px
